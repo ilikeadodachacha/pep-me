@@ -1,0 +1,19 @@
+{
+  "name": "pep-me",
+  "version": "1.0.0",
+  "description": "Generate quotes for a pep-talk prompt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilikeadodachacha/pep-me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilikeadodachacha/pep-me/issues"
+  },
+  "homepage": "https://github.com/ilikeadodachacha/pep-me#readme"
+}
