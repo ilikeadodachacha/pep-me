@@ -1,15 +1,15 @@
 angular.module('app', [])
   .controller('QuoteCtrl', function($scope, $http) {
 
-    $scope.getQuote = function() {
-      $http.get('/new-quote')
-        .success(function(res) {
-          alert('got a response')
+    $scope.getQuotes = function() {
+      $http.get("/quotes")
+        .then(function(res) {
+          $scope.newQuote = JSON.stringify(res.data);
         })
-        .error(function() {
-          alert('response failed')
-        });
     }
+
+
+
   })
 
 

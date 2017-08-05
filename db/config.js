@@ -11,11 +11,9 @@ db.once('open', function() {
 });
 
 var quoteList = mongoose.Schema({
-  quote: String
+  quote: {type: String}
 })
 
-// quotes list goes here
+var quotes = mongoose.model('quotes', quoteList)
 
-
-
-module.exports = db;
+module.exports = quotes;

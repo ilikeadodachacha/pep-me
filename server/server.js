@@ -1,18 +1,34 @@
 var express = require('express');
-var db = require('../db/config.js');
+var quotes = require('../db/config.js');
 var app = express();
-
-app.use(express.static('../public'));
-
-app.get('/new-quote', function(req, res) {
-  // console.log('GET request made');
-  res.send('You attempted to GET a quote!');
-})
-
-app.post('/save-quote', function(req, res) {
-  res.send('You got a POST from Pep Me');
-})
+var bodyParser = require('body-parser');
 
 app.listen(3000, function() {
   console.log('PepMe is listening on 3000')
+});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static('../public'));
+
+app.get('/quotes', function(req, res) {
+  quotes.find().exec(function(err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(data);
+    }
+  })
+});
+
+app.post('/save-quote', function(req, res) {
+  var newQuote = new quotes({quote: req.body.quote});
+  newQuote.save(function(err, newQuote) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(newQuote);
+    }
+  })
 });
