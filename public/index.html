@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>PepMe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+    <script src="app.js"></script>
+
+  </head>
+  <body ng-app="app">
+    <div ng-controller="QuoteCtrl">
+      <h1>Get a pep-talk inspo. quote!</h1>
+
+      <button ng-click="getQuote()">Get a quote</button>
+      <button ng-click="saveQuote()">Save for later</button>
+      <button ng-click="seeSavedQuotes()">See Saved Quotes</button>
+
+    </div>
+  </body>
+</html>

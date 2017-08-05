@@ -8,3 +8,8 @@ node_modules/
 compiled/
 
 ## API keys ##
+
+
+## Floo ##
+.flooignore
+.floo
