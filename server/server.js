@@ -28,7 +28,7 @@ app.post('/save-quote', function(req, res) {
     if (err) {
       res.send(err);
     } else {
-      res.send(newQuote);
+      res.send(newQuote + 'added to your favorites');
     }
   })
 });
